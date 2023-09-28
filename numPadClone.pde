@@ -5,37 +5,19 @@ void setup () {
   size (600, 800);
   display();
   population(); //rect() variables
-//
-//Population of rect() variables
-
-
-
-  /*
-x0 = 150;
-x1 = 250;
-x2 = 350;
-y0 = 300;
-y1 = 400;
-y2 = 500;
-y3 = 600;
-y4 = 700;
-*/
-/*Separate FOR loops
-for (int i=0; i<numPadColumns; i++ ) { //i stops for x not y
-  x[i] = widthSquare*(2*i+2.2)/2;
-  println( "Inside x", x[i] );
-} //End FOR
-  for ( int i=0; i<numPadRow; i++ ) {
-  y[i] = widthSquare*(2*i+5)/2;
-  println( "Inside y", y[i] );
-  } //End FOR
-  */
-  //combined for loops
-  
+  textSetup();
 } //End setup
 //
 void draw() {
   numPadRects();
+  fill (purple); //Ink, hexidecimal copied from color selector
+  textAlign (CENTER, CENTER); //Align x&y, see processing.org / reference
+  //values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
+  size = 50;
+  textFont(font, 50); //Chnage number until it fits, largest font size
+  //
+  text(title, titleX, titleY, titleWidth, titleHeight);
+  fill(whiteInk); //reset
 } //End draw
 //
 void mousePressed() {
