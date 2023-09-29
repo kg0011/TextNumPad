@@ -10,14 +10,7 @@ void setup () {
 //
 void draw() {
   numPadRects();
-  fill (purple); //Ink, hexidecimal copied from color selector
-  textAlign (CENTER, CENTER); //Align x&y, see processing.org / reference
-  //values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
-  size = 50;
-  textFont(font, 50); //Chnage number until it fits, largest font size
-  //
-  text(title, titleX, titleY, titleWidth, titleHeight);
-  fill(whiteInk); //reset
+  textDraw( purple, CENTER, CENTER, font, title, titleX, titleY, titleWidth, titleHeight );
 } //End draw
 //
 void mousePressed() {

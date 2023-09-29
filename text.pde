@@ -1,3 +1,6 @@
+PFont font;
+color purple=#651BDE, white=#FFFFFF; //Not night mode friendly
+//
 void textSetup() {
 //Fonts from OS
 String[] fontList = PFont.list(); //To list all fonts available on system
@@ -6,3 +9,23 @@ printArray(fontList); //For listing all possible fonts to choose, then createFon
 font = createFont ( "CenturyGothic", 50 ); //Verifys font exists
 //
 } //End text setup
+//
+void textDraw( color ink, int alignX, int alignY, PFont font, String text, float rectX, float rectY, float rectWidth, float rectHeight ) {
+  fill ( ink );
+  textAlign ( alignX, alignY );
+  float size = textCalculator( rectWidth, text );
+  textFont(font, size); //Chnage number until it fits, largest font size
+  text( text, rectX, rectY, rectWidth, rectHeight );
+  fill( white ); //Default
+} //End text draw
+
+float textCalculator( float rectWidth, float text ) {
+ float size = appWidth;
+ textSize( size );
+ while ( textWidth( size ) >= rectWidth ) {
+   size = size * 0.99;
+   textSize( size );
+ } //end while
+ 
+ return size;
+} //End text calculator
