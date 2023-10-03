@@ -14,18 +14,24 @@ void textDraw( color ink, int alignX, int alignY, PFont font, String text, float
   fill ( ink );
   textAlign ( alignX, alignY );
   float size = textCalculator( rectWidth, text );
+  println("4. ", textWidth(text), rectWidth, size);
   textFont(font, size); //Chnage number until it fits, largest font size
   text( text, rectX, rectY, rectWidth, rectHeight );
   fill( white ); //Default
 } //End text draw
-
+//
 float textCalculator( float rectWidth, float text ) {
  float size = appWidth;
  textSize( size );
+ println("1. ", textWidth(text), rectWidth, size);
  while ( textWidth( size ) >= rectWidth ) {
    size = size * 0.99;
    textSize( size );
- } //end while
- 
- return size;
+   } //end while
+   textSize( size );
+   println("2. ", textWidth(text), rectWidth, size);
+   size = textWidth (text);
+   textSize (size);
+   println("3. ", textWidth (text), rectWidth, size);
+   return size;
 } //End text calculator

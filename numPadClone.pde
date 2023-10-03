@@ -1,6 +1,3 @@
-//Global Variables
-
-//
 void setup () {
   size (600, 800);
   display();
@@ -10,7 +7,9 @@ void setup () {
 //
 void draw() {
   numPadRects();
-  textDraw( purple, CENTER, CENTER, font, title, titleX, titleY, titleWidth, titleHeight );
+  //
+  String one="1";
+  textDraw( purple, CENTER, CENTER, font, one, x[0], y[0], widthSquare, heightSquare );
 } //End draw
 //
 void mousePressed() {
